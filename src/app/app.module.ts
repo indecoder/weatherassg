@@ -7,6 +7,7 @@ import { HomeComponent } from './home/home.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexModule } from '@angular/flex-layout';
 import { CusmatModule } from './cusmat.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { CusmatModule } from './cusmat.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     FlexModule,
-    CusmatModule
+    CusmatModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
