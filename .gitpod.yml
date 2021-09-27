@@ -1,0 +1,18 @@
+image:
+  file: .gitpod.dockerfile
+
+tasks:
+- command: |
+    echo n | npm i -g @angular/cli --silent
+    npm i -g nx
+    npm install
+ 
+vscode:
+  extensions:
+    - nrwl.angular-console
+    - loiane.angular-extension-pack
+    - mikael.angular-beastcode
+    - angular.ng-template,
+    - esbenp.prettier-vscode,
+    - firsttris.vscode-jest-runner,
+    - dbaeumer.vscode-eslint
