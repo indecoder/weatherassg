@@ -1,5 +1,6 @@
+<div class="headertxt">Weather App Assignment</div>
 <div fxLayout="row wrap" class="cardholder">
-    <mat-card class="cardclass" *ngFor="let x of locations" fxLayout="column" fxLayoutGap="14px" style="justify-content: center;">
+    <mat-card class="cardclass" *ngFor="let x of locations" fxLayout="column" fxLayoutGap="14px" style="justify-content: center;" routerLink="/location/{{x.name}}">
         <mat-card-subtitle>City Name: <span style="color:black">{{x.name}}</span></mat-card-subtitle>
         <mat-card-subtitle>Temprature: <span style="color:black">{{x.temprature}} deg</span></mat-card-subtitle>
         <mat-card-subtitle>Sunrise: <span style="color:black">{{x.sunrisetime}}</span></mat-card-subtitle>

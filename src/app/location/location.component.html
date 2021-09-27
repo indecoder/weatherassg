@@ -1,0 +1,9 @@
+
+<div class="headertxt">City Name: {{loc | titlecase}}</div>
+<div fxLayout="row wrap" class="cardholder">
+    <mat-card class="cardclass" *ngFor="let x of data" fxLayout="column" fxLayoutGap="14px" style="justify-content: center;">
+        <mat-card-subtitle>Temprature: <span style="color:black">{{x.temp}} deg</span></mat-card-subtitle>
+        <mat-card-subtitle>Sunrise: <span style="color:black">{{x.sealevel}}</span></mat-card-subtitle>
+        <mat-card-subtitle>Date: <span style="color:black">{{x.date}}</span></mat-card-subtitle>
+    </mat-card>
+</div>

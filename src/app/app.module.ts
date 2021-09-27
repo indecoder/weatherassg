@@ -8,11 +8,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FlexModule } from '@angular/flex-layout';
 import { CusmatModule } from './cusmat.module';
 import { HttpClientModule } from '@angular/common/http';
+import { LocationComponent } from './location/location.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HomeComponent
+    HomeComponent,
+    LocationComponent
   ],
   imports: [
     BrowserModule,
