@@ -9,7 +9,8 @@ import { Component, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit {
 
   constructor(private http: HttpClient) { }
-
+  
+  //random city names
   locations = [
     {
       name: 'london',
@@ -47,6 +48,7 @@ export class HomeComponent implements OnInit {
     this.fillData();
   }
 
+  //filling locations data using api
   fillData() {
     this.locations.map(async (x) => {
       await this.callApi(x.name).then((y: any) => {
@@ -59,6 +61,7 @@ export class HomeComponent implements OnInit {
     })
   }
 
+  //api caller using city name
   async callApi(cityName:string) {
     console.log(cityName);
     return await this.http.get(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=3d8b309701a13f65b660fa2c64cdc517`).toPromise();
