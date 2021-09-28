@@ -30,6 +30,7 @@ export class LocationComponent implements OnInit, OnDestroy {
       let dt = ((day.getMonth() > 8) ? (day.getMonth() + 1) : ('0' + (day.getMonth() + 1))) + '/' + ((day.getDate() > 9) ? day.getDate() : ('0' + day.getDate())) + '/' + day.getFullYear();
       dt = dt + ' 09:00:00';
       await this.dataService.callApiloc(this.loc, Date.parse(dt)/1000+'').then(async (x:any) => {
+        //coudn't find 'sea_level' value so will countinue with pressure
         await this.data.push({'date': dt, 'temp':x['main']['temp'], 'sealevel': x['main']['sea_level'] ? x['main']['sea_level'] : x['main']['pressure']});
       })
     }
