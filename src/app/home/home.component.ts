@@ -1,5 +1,5 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { DataService } from '../data.service';
 
 @Component({
   selector: 'app-home',
@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private http: HttpClient) { }
+  constructor(private dataService: DataService) { }
   
   //random city names
   locations = [
@@ -51,20 +51,13 @@ export class HomeComponent implements OnInit {
   //filling locations data using api
   fillData() {
     this.locations.map(async (x) => {
-      await this.callApi(x.name).then((y: any) => {
-        console.log(y);
+      await this.dataService.callApi(x.name).then((y: any) => {
         x.temprature = y['main']['temp'];
         x.sunrisetime = y['sys']['sunrise'];
         x.sunsettime = y['sys']['sunset'];
       }
       );
     })
-  }
-
-  //api caller using city name
-  async callApi(cityName:string) {
-    console.log(cityName);
-    return await this.http.get(`https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=3d8b309701a13f65b660fa2c64cdc517`).toPromise();
   }
 
 }
